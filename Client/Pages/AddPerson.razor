@@ -1,0 +1,68 @@
+﻿@page "/addperson"
+@using NET6BlazorWASMForCRUDWithEFCore.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
+
+<h2>Add Person</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <label for="FirstName"> First Name *</label>
+        <div class="form-group">
+            <span class="form-group-text"><i class="fas fa-user"></i></span>
+            <input form="FirstName" class="form-control" @bind="@person.FirstName" />
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label for="LastName"> Last Name *</label>
+        <div class="form-group">
+            <span class="form-group-text"><i class="fa-regular fa-user"></i></span>
+            <input form="LastName" class="form-control" @bind="@person.LastName" />
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label for="Email"> Email *</label>
+        <div class="form-group">
+            <span class="form-group-text"><i class="fas fa-at"></i></span>
+            <input form="Email" class="form-control" @bind="@person.Email" />
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label for="MobileNo"> Mobile No *</label>
+        <div class="form-group">
+            <span class="form-group-text"><i class="fas fa-phone"></i></span>
+            <input form="MobileNo" class="form-control" @bind="@person.MobileNo" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <input type="button" class="btn btn-primary" @onclick="@Save" value="Save" />
+            <input type="button" class="btn btn-danger" @onclick="@Cancel" value="Cancel" />
+        </div>
+    </div>
+</div>
+
+@code {
+    PersonViewModel person = new PersonViewModel();
+    protected override async Task OnInitializedAsync()
+    {        
+    }
+    protected async Task Save()
+    {
+        var response = await Http.PostAsJsonAsync("api/Person", @person);
+        PersonViewModel personResponse = await response.Content.ReadFromJsonAsync<PersonViewModel>();
+
+        if (personResponse?.Id > 0)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Save Successfully!");
+            NavigationManager.NavigateTo("personlist");
+        }
+    }
+    void Cancel()
+    {
+        NavigationManager.NavigateTo("personlist");
+    }
+}
