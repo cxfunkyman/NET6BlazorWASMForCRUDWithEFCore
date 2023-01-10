@@ -5,17 +5,18 @@
 <h1>Personal Detail</h1>
 
 <div>
-    <a href="/addperson"> Create New Person</a>
+    <a href="/addperson" class="btn btn-success"> Create New Person</a>
+    <hr />
 
     @if (personList != null)
     {
         <table class="table-bordered">
             <thead>
-                <tr>
-                    <th width="30%">Name</th>
-                    <th width="20%">Email</th>
-                    <th width="20%">Mobile No</th>
-                    <th width="30%">Action</th>
+                <tr style="text-align : center;">
+                    <th width="27%">Name</th>
+                    <th width="30%">Email</th>
+                    <th width="18%">Mobile No</th>
+                    <th width="25%">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,10 +25,10 @@
                     <tr>
                         <td>@p.FirstName @p.LastName</td>
                         <td>@p.Email</td>
-                        <td>@p.MobileNo</td>
-                        <td>
-                            <a href="/editperson/@p.Id">Edit</a>
-                            <a href="/deleteperson/@p.Id">Delete</a>
+                        <td style="text-align : center;">@p.MobileNo</td>
+                        <td style="text-align : center;">
+                            <a href="/editperson/@p.Id" class="btn btn-info" >Edit</a>
+                            <a href="/deleteperson/@p.Id" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                 }

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET6BlazorWASMForCRUDWithEFCore.Server", "Server\NET6BlazorWASMForCRUDWithEFCore.Server.csproj", "{57F30C9B-E5FB-48FD-8928-946A9C9EBDB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET6BlazorWASMForCRUDWithEFCore.Server", "Server\NET6BlazorWASMForCRUDWithEFCore.Server.csproj", "{57F30C9B-E5FB-48FD-8928-946A9C9EBDB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET6BlazorWASMForCRUDWithEFCore.Client", "Client\NET6BlazorWASMForCRUDWithEFCore.Client.csproj", "{BCB9ABBA-5B1A-4AB7-8913-C92D3F8FDA18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET6BlazorWASMForCRUDWithEFCore.Client", "Client\NET6BlazorWASMForCRUDWithEFCore.Client.csproj", "{BCB9ABBA-5B1A-4AB7-8913-C92D3F8FDA18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET6BlazorWASMForCRUDWithEFCore.Shared", "Shared\NET6BlazorWASMForCRUDWithEFCore.Shared.csproj", "{1E8511A1-BF14-486A-B165-A5C1D07BB2F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET6BlazorWASMForCRUDWithEFCore.Shared", "Shared\NET6BlazorWASMForCRUDWithEFCore.Shared.csproj", "{1E8511A1-BF14-486A-B165-A5C1D07BB2F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
